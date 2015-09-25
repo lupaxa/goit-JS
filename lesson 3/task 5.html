@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<script>
+
+			function desk(a,b){
+
+				for (var i = 0; i < a; i++) {
+				    document.write("<br/>");
+				    if ( i % 2 == 0) {
+				        for (var j = 0; j < b; j++) {
+				            document.write("&nbsp # ");
+				           }
+				     }else {
+				           for (var j = 0; j < b; j++) {
+				                  document.write(" # &nbsp");
+				              }
+				            }
+				     }
+				};
+
+				do{
+					var a = prompt('Введите количество клеток по вертикали');
+					var b = prompt('Введите количество клеток по горизонтали');  
+				}while(isNaN(a) || isNaN(b) );
+				
+				desk(a,b);
+
+		</script>
+	</body>
+</html>
+
