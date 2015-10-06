@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<script>
+
+			function strCut(str){
+				var str = prompt('Введите строку');
+				return  (str.length > 20 ) ? str.slice(20) + "..." : str;
+			   };
+
+			console.log(strCut());
+
+		</script>
+	</body>
+</html>
+
+<!-- Напишите функцию, которая принимает на вход строку и возвращает ее неизменной если ее длина не превышает 20 символов. Если длинна больше 20, то обрезает строку и добавляет в конец строки '...' -->
