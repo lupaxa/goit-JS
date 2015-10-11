@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<script>
+				function uniqu(str) {
+				  return str.split('').sort().join('');
+				}
+
+				var strings = ['кришна', 'кришна', 'харе', 'харе', 'харе', 'харе', 'кришна', 'кришна', '8-()' ];
+
+				function anClean( strings ) {
+				  var store = {};
+				  
+				  for (var i = 0; i<strings.length; i++) {
+				    var index = uniqu( strings[i] ).toLowerCase();
+				    
+				    if ( index in store ) {
+				      store[index].push( strings[i] );
+				    } else {
+				      store[index] = [ strings[i] ];
+				    }
+
+				  }
+				    var res = [];
+						 for ( var key in store ) {
+						    res.push( store[key][0] );
+						  }
+						 return res.join(', ');
+					}
+
+						console.log( anClean( strings ) );
+		</script>
+	</body>
+</html>
+
+
+

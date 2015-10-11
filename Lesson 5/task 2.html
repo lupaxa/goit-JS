@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<script>
+			var image = {
+			    width: 100,
+			    height: 800,
+			    title: 'Cool image'
+			};
+
+			function multiplyNumeric( obj ) {
+				  for (var key in obj) {
+				  	if ( !isNaN(obj[key])){
+				  		 obj[key] += obj[key] ;
+				  	};
+				  };
+				  return obj;
+			};
+
+			console.log(multiplyNumeric(image) );
+			  
+		</script>
+	</body>
+</html>
+
+
+<!-- Напишите функцию multiplyNumeric которая принимает на вход объект и возвращает объект в котором все числовые значения у свойств умножены на 2.
+
+// Before
+var image = {
+    width: 100,
+    height: 400,
+    title: 'Cool image'
+};
+
+multiplyNumeric(image);
+
+// after
+image = {
+    width: 200,
+    height: 800,
+    title: 'Cool image'
+};
+ -->
