@@ -16,7 +16,7 @@
 				 	arr.push(+current);
 				 	};
 					
-				 }while(current !== null);
+				 }while(current !== null && current !== "" && isNumeric( current ) );
 			
 				var result = arr.reduce(function(sum, cur) {
 				return sum + cur;
