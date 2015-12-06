@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<script>
+			var obj = {
+					  person1Age: 20,
+					  person1Name: 'Ivanov',
+					  person2Age: 30,
+					  person2Name: 'Petrov',
+					  person3Age: 40,
+					  person3Name: 'Sidorov'
+					};
+
+			function isNumeric(n) {
+			  return !isNaN(parseFloat(n)) && isFinite(n);
+			};
+			function isString( str){
+			   return ( typeof str == "string");
+			};
+
+
+			function extractNumber(obj) {
+			  var ages = [];
+			  for (var key in obj) {
+			    if (isNumeric( obj[key] )) {
+			      ages.push( obj[key] );
+			    }
+			  }
+			   return ages;
+			}
+
+
+			function extractString(obj) {
+			  var name = [];
+			  for (var key in obj) {
+			    if (isString( obj[key] )) {
+			      name.push( obj[key] );
+			    }
+			  }
+			   return name;
+			}
+
+
+			console.log (extractNumber( obj ) );
+			console.log (extractString( obj ) );
+
+			var myArr = [1,30,40,2,7];
+
+			/**
+			 * Возвращает максимальное значение в массиве
+			 */
+			function getMaxNumber(arr){
+			  sortArr = arr.sort(function(a,b){
+			    return b - a;
+			  });
+			  
+			  return (sortArr[0]);
+			}
+
+			console.log("Text 2", getMaxNumber(myArr));
+
+			var word = 'weBm4as\'ters';
+
+			/**
+			 * Отсортировать символы по алфавиту
+			 */
+
+			function getSortedLetters (str) {
+			  var result = str.split('').sort().join('');
+			  return result;
+			}
+
+			console.log("Task 3", getSortedLetters(word));
+
+			/**
+			 * Возвращает строку у которой все слова капитализированы
+			 */
+			function getCapitaliseStr(str) {
+			 var arr = str.split(' ');
+			  for(var i = 0; i < arr.length; i++){
+			    arr[i] = capitaliseFirstLetter(arr[i]); 
+			  }
+			  
+			  return arr.join(' ');
+			}
+
+			/**
+			 * Возвращает капитализированное слово
+			 */
+			function capitaliseFirstLetter(word) {
+			  return word.charAt(0).toUpperCase() + word.slice(1);
+			}
+
+			console.log("Task 4", getCapitaliseStr('the quick brown fox'));
+
+			/**
+			 * Возвращает самое длинное слово
+			 */
+			function getLongestStr(str) {
+			  var arr = str.split(" ").sort(function(a, b){
+			    return b.length - a.length;
+			  });
+			  
+			  return arr[0]; 
+			}
+
+			console.log("Task 5", getLongestStr("Web Development Tutorial"));
+
+			/**
+			 * Перемешивает массив
+			 */
+			function shuffle(arr){
+			  return arr.sort(function(){
+			    return Math.random() - 0.5;
+			  });
+			}
+
+			var arr = [1, 2, -3, 4, 5, 6, 7];
+			console.log( "Task 6", shuffle(arr) );
+			console.log( "Task 6", shuffle(arr) );
+
+			/**
+			 * Считает сколько раз использовалось слово в массиве
+			 */
+			function countClassNameInString( arr ) {
+			  var obj = {};
+			  for (var i = 0; i < arr.length; i++) {
+			    if (arr[i] in obj) {
+			      obj[ arr[i] ] = obj[ arr[i] ] + 1; 
+			    } else {
+			      obj[ arr[i] ] = 1;
+			    }
+			  }
+			  
+			  return obj;
+			}
+
+			var arr =  ['link', 'menu', 'menu__item', 'menu__item', 'header', 'link', 'footer', 'sidebar', 'link'];
+
+			/**
+			 * Из массива выбирает уникальные имена классов, сортируя
+			 * их по частоте использования 
+			 */
+			function getMostUseClass( arr ) {
+			  
+			  var objClass = countClassNameInString(arr);
+			  
+			  return Object.keys( objClass ).sort( function( a, b){
+			    return objClass[ b ] - objClass[ a ];
+			  });
+			}
+
+			console.log("Task 8", getMostUseClass( arr ) );
+
+  
+		</script>
+	</body>
+</html>
+
